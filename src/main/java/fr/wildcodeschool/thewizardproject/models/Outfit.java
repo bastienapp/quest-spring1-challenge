@@ -5,19 +5,10 @@ import org.springframework.stereotype.Component;
 @Component
 public class Outfit {
 	
-	private String name;
-	
-	public Outfit(String name) {
-		this.name = name;
-	}
+	private String outfit;
 
-	public String getName() {
-		return name;
+	public String putOn(String outfit) {
+		this.outfit = outfit;
+		return String.format("Put on %s", outfit);
 	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-	
-	
 }

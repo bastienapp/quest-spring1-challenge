@@ -1,18 +1,26 @@
 package fr.wildcodeschool.thewizardproject.models;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+@Component
 public class Gandalf implements WizardInterface {
 
+	@Autowired
+	private Outfit outfit;
+	
+	public Gandalf(Outfit outfit) {
+		this.outfit = outfit;
+	}
+	
 	@Override
-	public void giveAdvice() {
-		System.out.println("Fly you fools");
+	public String giveAdvice() {
+		return "Fly you fools";
 	}
 
 	@Override
-	public void changeDress() {
-		// TODO Auto-generated method stub
-
+	public String changeDress() {
+		return outfit.putOn("grey dress");
 	}
 
 }
